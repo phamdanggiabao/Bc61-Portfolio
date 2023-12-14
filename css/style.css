@@ -1,0 +1,267 @@
+/* header  */
+header .navbar-nav .nav-item:hover a {
+    /* important được sử dụng khi muốn đè hết tất cả
+     các css của thuộc tính đang dc sử dụng */
+ color: green !important;;
+}
+
+header .navbar-nav .nav-item {
+    position: relative;
+}
+
+header .navbar-nav .nav-item::before{
+   content:'';
+   background-color: green;
+   width:0;
+   height:2px;
+   display:block;
+   position:absolute;
+   bottom:0;
+   left:0;
+   transition:all 0.5s;
+}
+header .navbar-nav .nav-item:hover::before{
+    width:100%;
+}
+
+header .navbar-nav .active a{
+    color: green !important;
+   
+}
+header .navbar-nav .active::before{
+    width:100%; 
+}
+ /* carousel  */
+  
+ .carousel .carousel-item{
+    height:100%;
+    position:relative;
+    
+   
+ }
+ .carousel .carousel-item img{
+    height:100%;
+ }
+
+ .carousel .carousel-item div{
+ /* cách 1 */
+    /* position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) */
+   
+    /* cách 2  */
+    position:absolute;
+    top:0;
+    left:0;
+     width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(39,43,54,.5);
+    flex-direction: column;
+    color:white;
+ }
+
+ .carousel .carousel-item div img{
+    height:150px;
+    width:150px;
+    border-radius:100px;
+ }
+ .carousel .carousel-item div h2{
+    font-size:56px;
+ }
+
+ .carousel .carousel-item div p{
+    font-size:24px;
+ }
+
+
+ .carousel .carousel-indicators {
+    padding-bottom:40px;
+}
+
+
+
+ .carousel-indicators [data-bs-target]{
+    padding:7px;
+   
+    width:0;
+    height:0;
+    border-radius: 100%;
+ }
+
+ .carousel-indicators .active{
+    background-color: green !important ;
+ } 
+
+ /* project css  */
+ .project .nav-pills .nav-link.active {
+   background-color:#35A22C;
+   color: white !important;
+   border-color: #35A22C !important;
+ }
+
+
+ .project .row .project_item:hover h3{
+   color:green;
+ }
+
+ .project .row .project_item .item_text{
+   transition:all 0.5s;
+   /* trước khi hover sẽ tạo sẵn một border và dùng 
+   transparent để có một border ẩn đi */
+   border:1px solid transparent;
+   border-radius:0 0 16px 16px;
+   border-top:none;
+ }
+.project .row .project_item:hover .item_text{
+   /* khi hover thay đổi màu border để có thể nhận thuộc tính
+   transition vì transition chỉ làm chậm hiệu ứng chuyển đổi
+    */
+   border:1px solid green;
+}
+
+.avaitable {
+   /* padding:50px 0; */
+   height:100%;
+   background-image: url(./../image/3.jpg);
+   background-size:cover;
+   background-position: top center;
+   background-attachment: fixed;
+   position: relative;
+}
+
+.avaitable::before{
+   content:'';
+   background-color:rgba(7,10,12,.72);
+   position: absolute;
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
+}
+.avaitable .avai_item:hover {
+   background-color: black;
+}
+/* background trong suốt */
+.avaitable .avai_item{
+   background: rgba(255, 255, 255, 0.066);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4.5px );
+-webkit-backdrop-filter: blur( 4.5px );
+border-radius: 10px;
+border: 1px solid rgba(255, 255, 255, 0.087);
+transition:all 0.5s;
+}
+
+.award{
+  padding:50px 0 ;
+   position: relative;
+}
+.award_bg {
+   padding:60px 0;
+   /* height:100%; */
+   background-image: url(./../image/memphis_3.png);
+   background-repeat: no-repeat;
+   background-position: bottom left;
+   background-size:50% auto;
+   position:absolute;
+   opacity:.5;
+   top:0;
+   left:0;
+  width:100%;
+  height:100%;
+}
+
+.award .content_left {
+   background: rgba(255, 255, 255, 0.473);
+   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+   backdrop-filter: blur( 4.5px );
+   -webkit-backdrop-filter: blur( 4.5px );
+   border-radius: 10px;
+   border: 1px solid rgba(255, 255, 255, 0.429);
+
+}
+.award .content_right {
+  
+}
+
+
+footer .footer_icon i{
+   /* font-size: 12px; */
+   padding:12px 14px;
+   border-radius: 100%;
+   color: #AAAAAA;
+   background-color: #212529;
+   border:1px solid #aaaaaa36;
+   transition:all 0.5s;
+z-index: 1;
+}
+footer .footer_icon a:hover i{
+   color:green;
+   border-color:green;
+}
+footer .footer_icon .google i{
+   padding:12px 11px;
+}
+footer .border{
+   border-color:#aaaaaa36 !important;
+   margin:30px 0;
+}
+footer .footer_title p{
+   color:rgba(245, 245, 245, 0.596) !important;
+}
+
+/* mobile <576px  */
+/* Sử dụng @media screen để reponsive cho các thiết bị khác */
+/* có 2 loại giá trị sử dụng max width và min width */
+
+/* max width thường dùng cho việc xử lí các giao diện hiển thị trên các thiêt bị 
+nhỏ hơn khi đã có giao diện trên màn hình lớn */
+/* max width từ 0 cho đến giá trị đó  */
+
+/* Khi sử dụng max width hoặc min width ta nên sử dụng từ nhỏ đến lớn */
+
+/* min width dành cho các trường hợp mobile-first nghĩa là xây dựng mobile trước */
+@media screen and (max-width: 576px){
+   .project .tab-pane .row{
+      width:100%;
+      margin:0 auto;
+   }
+
+   .avaitable .avai_item{
+      margin-bottom:20px;
+   }
+}
+/* lưu ý khi sử dụng min width sẽ reponsive cho các vùng từ nhỏ tới lớn, các giá trị màn hình 
+lớn hơn sẽ nằm ở dưới */
+@media screen and (min-width: 576px){
+   .carousel .carousel-item h2 {
+      /* color:orange; */
+
+   }
+
+   .avaitable .avai_item {
+
+      margin-bottom: 20px;
+   }
+}
+@media screen and (min-width:992px) {
+   .carousel .carousel-item h2 {
+      /* color:red; */
+   }
+
+}
+@media screen and (max-width: 576px){
+   .carousel .carousel-item {
+      text-align: center;
+    }
+    .carousel .carousel-inner img{
+      object-fit: cover;
+    }
+    .award .award_bg{
+      background-size:cover;
+    }
+}
